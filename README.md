@@ -13,7 +13,7 @@ This program is a simple contract written in Solidity, a programming language us
 
 * Clone the repository or just download the zip file.
 ```
-git clone https://github.com/rnkp755/metacrafters.git
+git clone [https://github.com/shivamcs6006/Metacrafters2.git]
 ```
 
 ### Executing program
