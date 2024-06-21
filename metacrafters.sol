@@ -11,14 +11,16 @@ contract MyToken {
     // Mapping of addresses to balances
     mapping(address => uint256) public balance;
 
-    // Mint Function to increase the total supply and balance of the specified address
-    function mint(address addr, uint256 value) public {
-        supply += value;
-        balance[addr] += value;
+    // Mint function to increase the total supply and balance of the specified address
+    function mint(address _address, uint256 _value) public {
+        totalSupply += _value;
+        balances[_address] += _value;
     }
-    // Burn Function to decrease the total supply and balance of the specified address
-    function burn(address addr, uint256 value) public {
-        supply -= value;
-        balance[addr] -= value;
-    }
+
+    // Burn function to decrease the total supply and balance of the specified address
+    function burn(address _address, uint256 _value) public {
+        require(balances[_address] >= _value, "Insufficient balance to burn");
+        totalSupply -= _value;
+        balances[_address] -= _value;
+    }
 }
