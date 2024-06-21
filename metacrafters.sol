@@ -13,14 +13,14 @@ contract MyToken {
 
     // Mint function to increase the total supply and balance of the specified address
     function mint(address _address, uint256 _value) public {
-        totalSupply += _value;
-        balances[_address] += _value;
+        supply += _value;
+        balance[_address] += _value;
     }
 
     // Burn function to decrease the total supply and balance of the specified address
     function burn(address _address, uint256 _value) public {
-        require(balances[_address] >= _value, "Insufficient balance to burn");
-        totalSupply -= _value;
-        balances[_address] -= _value;
-    }
+        require(balance[_address] >= _value, "Insufficient balance to burn");
+        supply -= _value;
+        balance[_address] -= _value;
+    }
 }
